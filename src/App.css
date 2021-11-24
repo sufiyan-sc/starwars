@@ -1,0 +1,148 @@
+@font-face {
+  font-family: poppins;
+  src: url('./fonts/Poppins/Poppins-Regular.ttf');
+}
+@font-face {
+  font-family: sourceSanspro;
+  src: url('./fonts/SourceSansPro/SourceSansPro-Regular.ttf');
+}
+* {
+  font-family: sourceSanspro;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --background-primary: #11151a;
+  --card-primary: #000000;
+  --color-primary: #ffffff;
+  --color-secondary: #f26247;
+  --button-primary: #ffba58;
+}
+.Loader {
+  color: var(--color-primary);
+  height: 48px;
+  width: 48px;
+  border: 2px solid var(--color-primary);
+}
+/* Header */
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0 2rem 0;
+}
+
+/* Form  */
+.Form {
+  position: relative;
+}
+.Form--Input {
+  height: 48px;
+  width: 350px;
+  background-color: var(--card-primary);
+  outline: none;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem;
+  caret-color: var(--button-primary);
+  color: var(--color-primary);
+}
+.Form--SearchBtn {
+  outline: none;
+  border: none;
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  bottom: 6px;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  background-color: var(--button-primary);
+  color: var(--color-primary);
+}
+
+/* MovieApp */
+.MovieApp {
+  background-color: var(--background-primary);
+  padding: 1rem 2rem;
+}
+
+/* MovieList */
+
+.MovieList {
+  /* display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 4rem; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* MovieCard */
+
+.MovieCard {
+  background-color: var(--card-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  padding: 1.5rem;
+  cursor: pointer;
+  width: 250px;
+  transition: all 1s ease;
+}
+.MovieCard--Select {
+  width: 532px;
+  align-items: flex-start;
+}
+/* .MovieCard > div:nth-child(3) {
+  display: flex;
+  width: 100%;
+  align-items: center;
+} */
+.MovieCard > div:nth-child(4) {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MovieCard--title {
+  color: var(--color-primary);
+  padding-top: 1rem;
+}
+.MovieCard--title--select {
+  color: var(--color-secondary);
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.MovieCard--director,
+.MovieCard--producers,
+.MovieCard--releaseDate {
+  color: var(--color-primary);
+  font-size: 14px;
+  padding-right: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.MovieCard--director span:first-child,
+.MovieCard--producers span:first-child,
+.MovieCard--releaseDate span:first-child {
+  opacity: 0.5;
+}
+.MovieCard--showMore {
+  color: var(--button-primary);
+  font-size: 15px;
+}
+.MovieCard--crawl {
+  color: var(--color-primary);
+  opacity: 0.7;
+  text-align: justify;
+  line-height: 130%;
+  font-size: 14px;
+  padding-top: 1rem;
+}
