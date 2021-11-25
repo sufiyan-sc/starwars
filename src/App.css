@@ -6,6 +6,11 @@
   font-family: sourceSanspro;
   src: url('./fonts/SourceSansPro/SourceSansPro-Regular.ttf');
 }
+html,
+body {
+  height: 100%;
+  background-color: var(--background-primary);
+}
 * {
   font-family: sourceSanspro;
   margin: 0;
@@ -23,7 +28,28 @@
   color: var(--color-primary);
   height: 48px;
   width: 48px;
-  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  border-top: 5px solid var(--button-primary);
+  border-left: 5px solid var(--color-secondary);
+  border-bottom: 5px solid var(--button-primary);
+  border-right: 5px solid var(--color-secondary);
+  padding: 2px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: animate 1s infinite cubic-bezier(0.6, -0.28, 0.74, 0.05);
+}
+.Loader span {
+  position: absolute;
+}
+@keyframes animate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 /* Header */
 .Header {
@@ -63,7 +89,6 @@
 
 /* MovieApp */
 .MovieApp {
-  background-color: var(--background-primary);
   padding: 1rem 2rem;
 }
 
@@ -111,6 +136,7 @@
 .MovieCard--title {
   color: var(--color-primary);
   padding-top: 1rem;
+  text-transform: capitalize;
 }
 .MovieCard--title--select {
   color: var(--color-secondary);
@@ -125,9 +151,6 @@
   color: var(--color-primary);
   font-size: 14px;
   padding-right: 1rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 .MovieCard--director span:first-child,
 .MovieCard--producers span:first-child,
